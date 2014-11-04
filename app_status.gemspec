@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["creeonix@gmail.com"]
   spec.summary       = %q{Simple app satus report}
   spec.description   = %q{Very simple app services status report for rails, sinatra or rack}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/DispatchMe/app-status"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
