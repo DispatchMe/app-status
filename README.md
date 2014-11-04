@@ -32,7 +32,7 @@ Or install it yourself as:
 
 in `config/routes.rb` add following line:
 ```ruby
-  mount AppStatus::App.new => '/status'
+mount AppStatus::App.new => '/status'
 ```
 
 ### Sinatra
