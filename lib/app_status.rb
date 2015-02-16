@@ -2,6 +2,7 @@ require 'app_status/version'
 require 'app_status/adapters/active_record'
 require 'app_status/adapters/redis'
 require 'app_status/adapters/sidekiq'
+require 'logger'
 
 module AppStatus
   extend self
@@ -12,6 +13,16 @@ module AppStatus
       [obj.respond_to?(:adapter_name) ? obj.adapter_name : klass, obj.status]
     end.to_h
     result.merge!(env: environment)
+  end
+
+  def logger
+    if defined?(Rails)
+      Rails.logger
+    elsif defined?(Sinatra)
+      Sinatra::Application.logger
+    else
+      Logger.new(STDOUT)
+    end
   end
 
   def environment

@@ -7,7 +7,9 @@ module AppStatus
         else
           'N/A'
         end
-      rescue
+      rescue => e
+        AppStatus.logger.error "STATUS ERROR: #{adapter_name}"
+        AppStatus.logger.error e
         'Down'
       end
     end
