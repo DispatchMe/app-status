@@ -13,6 +13,10 @@ module AppStatus
         AppStatus.logger.error e
         'Down'
       end
+
+      def self.adapter_name
+        'Sidekiq'
+      end
     end
   end
 end
