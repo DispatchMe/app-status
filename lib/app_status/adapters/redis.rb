@@ -8,7 +8,7 @@ module AppStatus
           'N/A'
         end
       rescue => e
-        AppStatus.logger.error "STATUS ERROR: #{adapter_name}"
+        AppStatus.logger.error "STATUS ERROR: [REDIS] #{e.message}"
         AppStatus.logger.error e
         'Down'
       end
